@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "jobOfferScraper"
+version = "0.1.0"
+description = "Internship scraper with Streamlit frontend"
+authors = ["Salim"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "scraper" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+
+# Core scraping
+beautifulsoup4 = "^4.12.3"
+lxml = "^5.2.1"
+httpx = "^0.27.0"
+requests = "^2.32.3"
+
+# DB
+sqlalchemy = "^2.0.30"
+alembic = "^1.13.1"
+
+# Data utils
+pydantic = "^2.7.1"
+pydantic-settings = "^2.2.1"
+langdetect = "^1.0.9"
+rapidfuzz = "^3.8.1"
+
+# Scheduling
+apscheduler = "^3.10.4"
+
+# Frontend
+streamlit = "^1.35.0"
+psycopg = {extras = ["binary"], version = "^3.2.10"}
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+pytest-vcr = "^1.0.2"
+responses = "^0.25.0"
+black = "^24.4.2"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
